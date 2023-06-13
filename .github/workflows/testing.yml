@@ -9,4 +9,4 @@ jobs:
             - name: Install depedencies
               run: npm ci
             - name: Test application
-              run: npm run test 
+              run: npm test 
