@@ -30,11 +30,19 @@ jobs:
     #     - name: Lint application
     #       run : npm run lint
     build:
-      runs-on: ubuntu-latest
+      runs-on: ${{ matrix.os }}
       needs: test_my_app
+      strategy:
+        matrix:
+          my-node-version: [14, 16]
+          os: [ubuntu-latest, windows-latest]
       steps:
         - name: Get repository code
           uses: actions/checkout@v3
+        - name: Install Node Js
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.my-node-version}}
         - name: Cache deps
           uses: actions/cache@v3
           with:
