@@ -2,7 +2,7 @@ name: Deploy Angular App
 on:
   push:
     branches:
-      - 'master'
+      - 'dev'
 jobs:
     test_my_app:
         runs-on: ubuntu-latest
