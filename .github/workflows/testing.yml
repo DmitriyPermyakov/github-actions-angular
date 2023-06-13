@@ -9,4 +9,4 @@ jobs:
             - name: Install depedencies
               run: npm ci
             - name: Test application
-              run: npm test 
+              run: npm test -- --watch=false --browsers=ChromeHeadless 
