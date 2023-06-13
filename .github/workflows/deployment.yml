@@ -2,7 +2,9 @@ name: Deploy Angular App
 on:
   push:
     branches:
-      - 'dev'
+      - 'master'
+    paths-ignore:
+      - './github/workflows/*'
 jobs:
     test_my_app:
         runs-on: ubuntu-latest
